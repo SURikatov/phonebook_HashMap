@@ -46,4 +46,11 @@ public class PhoneBook
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
+    public static void main(String[] args) 
+    {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.addContact("Сергей", "89991122333");
+        phoneBook.addContact("Пётр", "89121122333");
+        phoneBook.showPhoneBook();
+    }
 }
