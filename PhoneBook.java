@@ -21,4 +21,14 @@ public class PhoneBook
         }
         contacts.remove(name);
     }
+    public void findContact(String name) 
+    {
+        if (!contacts.containsKey(name)) 
+        {
+            System.out.println("Контакт " + name + " не найден.");
+            return;
+        }
+        Set<String> phoneNumbers = contacts.get(name);
+        System.out.println("Телефоны контакта " + name + ": " + phoneNumbers);
+    }
 }
