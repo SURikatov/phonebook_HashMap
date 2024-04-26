@@ -31,4 +31,19 @@ public class PhoneBook
         Set<String> phoneNumbers = contacts.get(name);
         System.out.println("Телефоны контакта " + name + ": " + phoneNumbers);
     }
+    public void showPhoneBook() 
+    {
+        if (contacts.isEmpty()) 
+        {
+            System.out.println("Телефонная книга пуста.");
+            return;
+        }
+        List<Map.Entry<String, Set<String>>> sortedContacts = new ArrayList<>(contacts.entrySet());
+        sortedContacts.sort((entry1, entry2) -> Integer.compare(entry2.getValue().size(), entry1.getValue().size()));
+        System.out.println("Телефонная книга:");
+        for (Map.Entry<String, Set<String>> entry : sortedContacts) 
+        {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
 }
